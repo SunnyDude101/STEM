@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Roboto_Slab variant0", Tofu;
+  }
+  
+  /* Style the header */
+  .header {
+    grid-area: header;
+    background-color: #f1f1f1;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+  }
+
+  /* Container for flexboxes */
+  .row {
+    display: -webkit-flex;
+    display: flex;  
+  }
+
+  .column {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 10px;
+    height: 300px;
+  }
+
+  .info {
+    text-align: left;
+    font-size: 20px;
+  }
+  
+  /* The grid container */
+  .grid-container {
+    display: grid;
+    grid-template-areas: 
+      'header header header header header header' 
+      'left left middle middle right right' 
+      'footer footer footer footer footer footer';
+    /* grid-column-gap: 10px; - if you want gap between the columns */
+  } 
+  
+  .left,
+  .middle,
+  .right {
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  
+  /* Style the left column */
+  .left {
+    grid-area: left;
+    background-color: #F65C02;
+  }
+  
+  /* Style the middle column */
+  .middle {
+    grid-area: middle;
+    background-color:#F65C02;
+  }
+  
+  /* Style the right column */
+  .right {
+    grid-area: right;
+    background-color:#F65C02;
+  }
+  
+  /* Style the footer */
+  .footer {
+    grid-area: footer;
+    background-color: #042350;
+    padding: 10px;
+    text-align: left;
+    color: white;
+    font-family: normal;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+  }
+  .footer a{
+    text-decoration: none;
+    color: white;
+  }
+  
+
+  .left2{
+    grid-area: left;
+    background-color:#042350; 
+  }
+  
+  /* Style the middle column */
+  .middle2 {
+    grid-area: middle;
+    background-color:#bbb;
+  }
+  
+  /* Style the right column */
+  .right2 {
+    grid-area: right;
+    background-color:#ccc;
+  }
+  
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  @media (max-width: 600px) {
+    .grid-container  {
+      grid-template-areas: 
+        'header header header header header header' 
+        'left left left left left left' 
+        'middle middle middle middle middle middle' 
+        'right right right right right right' 
+        'footer footer footer footer footer footer';
+    }
+}
